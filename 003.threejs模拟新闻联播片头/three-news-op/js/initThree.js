@@ -34,6 +34,7 @@ camera.position.set(0, 0, 35);
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.maxDistance = 800;
 controls.autoRotateSpeed = 1.7;
+if (!import.meta.env.DEV) controls.enabled = false;
 
 const composer = new EffectComposer(renderer);
 const renderPass = new RenderPass(scene, camera);
