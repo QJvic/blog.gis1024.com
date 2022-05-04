@@ -23,10 +23,7 @@ const [earthTexture, cloudTexture] = await Promise.all(textureList);
 // 预加载字体
 const font = await loadTTF("/assets/minTFF/FangZhengHeiTiJianTi-1.ttf");
 
-// 预加载声音
-const bgm = await loadAudio("/assets/bgm.m4a");
-
-export { rgb, earthTexture, cloudTexture, font, bgm };
+export { rgb, earthTexture, cloudTexture, font };
 
 // 预加载图片
 function loadImage(url) {
@@ -66,15 +63,5 @@ function loadTTF(url) {
       (progress) => {},
       (e) => reject(e)
     );
-  });
-}
-
-// 预加载声音
-function loadAudio(url) {
-  return new Promise((resolve, reject) => {
-    const audio = new Audio(url);
-    audio.addEventListener("canplay", (e) => {
-      resolve(audio);
-    });
   });
 }
