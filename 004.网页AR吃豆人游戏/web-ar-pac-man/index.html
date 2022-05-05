@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>网页AR吃豆人游戏</title>
+    <link href="./index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="app">
+      <!--      控制按钮  -->
+      <div class="ctrls">
+        <div class="start" onclick="window.location.reload()">再来一次</div>
+      </div>
+      <!--      吃豆人和豆子  -->
+      <div id="play-ground-wrap">
+        <div id="man">
+          <div class="half">
+            <div class="circle"></div>
+          </div>
+          <div class="half half-bottom">
+            <div class="circle bottom"></div>
+          </div>
+        </div>
+      </div>
+      <!--      调试canvas  -->
+      <canvas id="devCanvas"></canvas>
+      <!--      视频画面  -->
+      <video id="video"></video>
+      <!--      胜利画面 -->
+      <iframe id="success" src="/fireworks/fireworks.html"></iframe>
+      <!--      loading画面   -->
+      <div id="loading-wrap">
+        <div class="text">加载AI模型中，体积较大，请耐心等待..</div>
+        <div class="loading">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="./js/index.js" type="module"></script>
+</html>
