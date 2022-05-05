@@ -76,5 +76,8 @@ async function success(stream) {
 }
 
 function error(error) {
+  alert(
+    `访问用户媒体设备失败，请打开摄像头权限${error.name}, ${error.message}`
+  );
   console.log(`访问用户媒体设备失败${error.name}, ${error.message}`);
 }
