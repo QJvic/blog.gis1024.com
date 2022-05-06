@@ -51,6 +51,7 @@ video.addEventListener("canplay", async (e) => {
     requestAnimationFrame(animate);
 
     const result = await faceapi.ssdMobilenetv1(videoEl);
+    console.log(result);
     if (result.length) {
       const x = result[0].box.width / 2 + result[0].box.left;
       const y = result[0].box.height / 2 + result[0].box.top;
