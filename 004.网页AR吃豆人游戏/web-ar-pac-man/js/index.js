@@ -62,13 +62,12 @@ video.addEventListener("canplay", async (e) => {
     }
 
     // 如果是开发环境，把人脸识别的边框画出来，方便调试
-    if (import.meta.env.DEV) {
-      const dims = faceapi.matchDimensions(devCanvasEl, videoEl, true);
-      faceapi.draw.drawDetections(
-        devCanvasEl,
-        faceapi.resizeResults(result, dims)
-      );
-    }
+    // 所有环境都画出来，方便识别
+    const dims = faceapi.matchDimensions(devCanvasEl, videoEl, true);
+    faceapi.draw.drawDetections(
+      devCanvasEl,
+      faceapi.resizeResults(result, dims)
+    );
   }
 
   await animate();
