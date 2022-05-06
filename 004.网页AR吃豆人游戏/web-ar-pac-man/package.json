@@ -5,7 +5,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "face-api.js": "^0.22.2"
+    "face-api.js": "^0.22.2",
+    "webrtc-adapter": "^8.1.1"
   },
   "devDependencies": {
     "vite": "^2.9.6"

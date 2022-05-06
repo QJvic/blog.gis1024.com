@@ -1,5 +1,9 @@
 import * as faceapi from "face-api.js";
 import { checkEaten, initPoints } from "./startGame";
+import adapter from "webrtc-adapter";
+
+console.log(adapter.browserDetails.browser);
+console.log(adapter.browserDetails.version);
 
 const video = document.getElementById("video");
 if (navigator.mediaDevices.getUserMedia) {

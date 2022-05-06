@@ -237,6 +237,11 @@ rollup@^2.59.0:
   optionalDependencies:
     fsevents "~2.3.2"
 
+sdp@^3.0.2:
+  version "3.0.3"
+  resolved "https://registry.npmmirror.com/sdp/-/sdp-3.0.3.tgz#669958d54663ea9f4a46cc66518c9d980c52c61e"
+  integrity sha512-8EkfckS+XZQaPLyChu4ey7PghrdcraCVNpJe2Gfdi2ON1ylQ7OasuKX+b37R9slnRChwIAiQgt+oj8xXGD8x+A==
+
 seedrandom@2.4.3:
   version "2.4.3"
   resolved "https://registry.npmmirror.com/seedrandom/-/seedrandom-2.4.3.tgz#2438504dad33917314bff18ac4d794f16d6aaecc"
@@ -268,3 +273,10 @@ vite@^2.9.6:
     rollup "^2.59.0"
   optionalDependencies:
     fsevents "~2.3.2"
+
+webrtc-adapter@^8.1.1:
+  version "8.1.1"
+  resolved "https://registry.npmmirror.com/webrtc-adapter/-/webrtc-adapter-8.1.1.tgz#e4a4dfd1b5085d119da40c4efc0147f7d0961cba"
+  integrity sha512-1yXevP7TeZGmklEXkvQVrZp3fOSJlLeXNGCA7NovQokxgP3/e2T3EVGL0eKU87S9vKppWjvRWqnJeSANEspOBg==
+  dependencies:
+    sdp "^3.0.2"
