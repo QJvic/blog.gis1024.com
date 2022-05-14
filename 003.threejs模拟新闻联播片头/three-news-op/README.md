@@ -2,4 +2,4 @@
 
 在线预览地址：https://gis1024-three-news-op.vercel.app/
 
-博客地址：等待发布
+博客地址：https://blog.gis1024.com/three_news_op_1.html
