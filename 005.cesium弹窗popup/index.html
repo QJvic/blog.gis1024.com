@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>cesium弹窗popup</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      #cesium-container {
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="//lf6-cdn-tos.bytecdntp.com/cdn/expire-1-y/cesium/1.86.1/Widgets/widgets.min.css"
+    />
+    <script src="//lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/cesium/1.90.0/Cesium.js"></script>
+  </head>
+  <body>
+    <div id="cesium-container"></div>
+  </body>
+
+  <script>
+    // 请自己去cesium官网注册申请一个token替换
+    Cesium.Ion.defaultAccessToken =
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0ZmJmOGExOC1kMGZjLTRhNmMtYjgyZS04MDU2NDcxMTI2N2IiLCJpZCI6MTY2ODYsImlhdCI6MTY1OTk3MjU2MH0.YacXSjuuxfg6sO8lrcmnMYPyYDuslJ98xiumwnhUh58";
+    const viewer = new Cesium.Viewer("cesium-container");
+    const scene = viewer.scene;
+
+    let coord = [120.311889, 31.491064];
+    viewer.camera.flyTo({
+      destination: Cesium.Cartesian3.fromDegrees(...coord, 1000),
+    });
+
+    const div = document.createElement("div");
+    div.innerHTML = "弹窗里需要填充点内容";
+    viewer.container.append(div);
+
+    scene.postRender.addEventListener(() => {
+      let windowCoord = Cesium.SceneTransforms.wgs84ToWindowCoordinates(
+        scene,
+        Cesium.Cartesian3.fromDegrees(...coord, 0)
+      );
+      let x = windowCoord.x - div.offsetWidth / 2;
+      let y = windowCoord.y - div.offsetHeight;
+      div.style.cssText = `
+        position:absolute;
+        left:0;
+        top:0;
+        height:100px;
+        width:100px;
+        background:rgba(0,0,0,0.7);
+        color:white;
+        transform:translate3d(${Math.round(x)}px,${Math.round(y)}px, 0);
+    `;
+    });
+  </script>
+</html>
