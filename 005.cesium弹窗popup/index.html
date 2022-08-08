@@ -23,6 +23,12 @@
   </head>
   <body>
     <div id="cesium-container"></div>
+    <a
+      href="https://gis1024.com"
+      style="position: absolute; left: 10px; top: 10px"
+    >
+      gis1024.com
+    </a>
   </body>
 
   <script>
@@ -38,7 +44,7 @@
     });
 
     const div = document.createElement("div");
-    div.innerHTML = "弹窗里需要填充点内容";
+    div.innerHTML = "弹窗里需要填充点内容，支持html字符串";
     viewer.container.append(div);
 
     scene.postRender.addEventListener(() => {
