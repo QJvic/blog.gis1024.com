@@ -35,3 +35,12 @@ sample code of [blog.gis1024.com](https://blog.gis1024.com)
 **Blog** : https://blog.gis1024.com/web-ai-ar-pac-man.html
 
 **Code** : [location here](./004.网页AR吃豆人游戏/web-ar-pac-man)
+
+## 005
+**Title** : cesium popup
+
+**Preview** : https://gis1024.com/blog-case/005cesium-popup/
+
+**Blog** : https://blog.gis1024.com/cesium-popup1.html
+
+**Code** : [location here](./005.cesium弹窗popup)
